@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+ </head>
+ <body>
+ <h2>AngularJS Sample Application</h2>
+ <div ng-app = "mainApp" ng-controller = "studentController">
+ <form name = "studentForm" novalidate>
+ <table border = "0">
+ <tr>
+ <td>Enter first name:</td>
+ <td><label> <input name = "firstname" type = "text" ng-model = "firstName" required>
+
+ <span ng-show = "studentForm.firstname.$error.required">First Name is
+required.</span>
+ </span>
+ </td> </label>
+ </tr>
+ <tr>
+ <td>Enter last name: </td>
+ <td><label> <input name = "lastname" type = "text" ng-model = "lastName" required>
+
+ <span ng-show = "studentForm.lastname.$error.required">Last Name is
+required.</span>
+ </span>
+ </td> </label>
+ </tr>
+ <tr>
+ <td>Email: </td><td><label><input name = "email" type = "email" ng-model = "email"
+length = "100" required>
+
+ <span ng-show = "studentForm.email.$error.required">Email is required.</span>
+ <span ng-show = "studentForm.email.$error.email">Invalid email address.</span>
+ </span>
+ </td> </label>
+ </tr>
+ <tr>
+    <td>
+    <button type="button" ng-click = "reset()">Reset</button>
+    </td>
+    <td>
+    <button type="button" ng-disabled = "studentForm.firstname.$dirty &&
+    studentForm.firstname.$invalid || studentForm.lastname.$dirty &&
+    studentForm.lastname.$invalid || studentForm.email.$dirty &&
+    studentForm.email.$invalid" ng-click="submit()">Submit</button>
+    </td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    <script>
+    var mainApp = angular.module("mainApp", []);
+    mainApp.controller('studentController', function($scope) {
+    $scope.reset = function(){
+    $scope.firstName = "";
+    $scope.lastName = "";
+    $scope.email = "";
+    }
+   
+    $scope.reset();
+    });
+    </script>
+   </body>
+   </html> 

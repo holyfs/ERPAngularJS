@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ </head>
+<body ng-app="">
+<form>
+ Pick a topic:
+ <label> <input type="radio" ng-model="myVar" value="node"> Node JS </label>
+ <label> <input type="radio" ng-model="myVar" value="react"> React JS </label>
+ <label> <input type="radio" ng-model="myVar" value="angular"> Angular JS </label>
+</form>
+<div ng-switch="myVar">
+ <div ng-switch-when="node">
+ <h1>Node JS</h1>
+ <p>Node JS is an open source development platform </br> that allows JavaScript code
+to be executed server-side</p>
+ </div>
+ <div ng-switch-when="react">
+ <h1>React JS</h1>
+ <p>React is a free and open-source JavaScript front-end library </br> for creating user
+interfaces based on UI components</p>
+ </div>
+ <div ng-switch-when="angular">
+ <h1>Angular JS</h1>
+ <p>AngularJS is a dynamic web app structure framework </br> It allows you to utilize
+HTML as your template language and
+ </br> enhance HTML's syntax to represent the components of your application clearly
+and succinctly</p>
+ </div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div ng-app="myApp">
+Convert the number 200, using a custom made service.
+<h1>{{200 | myFormat}}</h1>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.service('hexo', function() {
+ this.myFunc = function (x) {
+ return x.toString(16);
+ }
+});
+app.filter('myFormat',['hexo', function(hexo) {
+ return function(x) {
+ return hexo.myFunc(x);
+ };
+}]);
+</script>
+</body>
+</html>

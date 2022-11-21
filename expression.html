@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js></script>
+</head>
+<body>
+ <div ng-app="">
+ <p>My first expression: {{ 5 + 5 }}</p>
+ </div>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <h1 ng-style="myObj">Welcome</h1>
+    <script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+     $scope.myObj = {
+     "color" : "white",
+     "background-color" : "red",
+     "font-size" : "30px",
+     "padding" : "30px"
+     }
+    });
+    </script>
+    <div ng-app="" ng-init="firstName='Mary';lastName='Com'">
+        <p>The full name is: {{ firstName + " " + lastName }}</p>
+       
+       </div>
+       <div ng-app="" ng-init="points=[11,21,31,41,51]">
+        <p>The third result is {{ points[3] }}</p>
+       </div>
+       
+       <div ng-app="" ng-init="person={firstName:'Mary',lastName:'Com'}">
+        <p>The name is {{ person.lastName }}</p>
+       </div>
+    </body>
+</html>

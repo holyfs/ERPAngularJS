@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('timeoutApp', []);
+        app.controller('timeoutCtrl', function ($scope, $timeout) {
+            $scope.msg = "Hi Guest"
+            $timeout(function () {
+                $scope.msg = "Welcome to AngularJS";
+            }, 2000);
+        });
+    </script>
+</head>
+
+<body>
+    <div ng-app="timeoutApp" ng-controller="timeoutCtrl">
+        <h2 style="color:red;">Example of $timeout Service</h2>
+        <p>This header will change after two seconds:</p>
+        <b>{{msg}}</b>
+        <p>The $timeout service runs a function after a specified number of milliseconds.</p>
+    </div>
+</body>
+
+</html>
+       

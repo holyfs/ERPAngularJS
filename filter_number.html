@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html >
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app >
+<h2 style="color:red;">Number Filter</h2>
+Enter Amount: <input type="number" ng-model="amount" /> <br />
+ amount | number = {{amount | number}} <br />
+ amount | number:2 = {{amount | number:2}} <br />
+ amount | number:4 = {{amount | number:4}} <br />
+ amount | number = <span ng-bind="amount | number"></span>
+</body>
+</html>

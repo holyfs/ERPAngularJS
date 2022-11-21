@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angularroute.js"></script>
+</head>
+<body ng-app="myApp">
+<p><a href="#/!">Main</a></p>
+<a href="reactjs.html">React JS</a>
+<a href="nodejs.html">Node JS</a>
+<p>Click on the links.</p>
+<div ng-view></div>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+ $routeProvider
+ .when("/", {
+ templateUrl : "main.html",
+ })
+ .when("/reactjs", {
+ templateUrl : "reactjs.html",
+ controller : "reactjsCtrl"
+ })
+ .when("/nodejs", {
+ templateUrl : "nodejs.html",
+ controller : "nodejsCtrl"
+ });
+});
+app.controller("reactjsCtrl", function ($scope) {
+ $scope.msg = "React JS !!!";
+});
+app.controller("nodejsCtrl", function ($scope) {
+ $scope.msg = "Node JS !!!";
+});
+</script>
+</body>
+</html>

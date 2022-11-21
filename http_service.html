@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('serviceApp', []);
+app.controller('serviceCtrl', function ($scope, $http) {
+ $http({
+ method: 'GET',
+ url: 'sample.html'
+ }).then(function success(response) {
+ $scope.myWelcome = response.data;
+ }, function error(response) {
+ });
+ });
+</script>
+</head>
+<body>
+<div ng-app="serviceApp" ng-controller="serviceCtrl">
+<h2 style="color:red;">Example of $http Service</h2>
+<p>Hi, Guest</p>
+<h1>{{myWelcome}}</h1>
+<p>The $http service requests a page on the server, and the response is set as the value of
+the "myWelcome" variable.</p>
+</div>
+</body>
+</html>
